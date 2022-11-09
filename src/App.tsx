@@ -7,6 +7,7 @@ import BackgroundImg from 'assets/images/17001.jpg';
 import SignUp from 'pages/Signup/SignUp';
 import Login from 'pages/Login/Login';
 import Main from 'pages/\bMain/Main';
+import Record from 'pages/record/Record';
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route index element={<Main />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/record" element={<Record />} />
         </Routes>
       </BackGroundContainer>
       <Footer />

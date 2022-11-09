@@ -5,30 +5,35 @@ import Main1 from 'assets/images/main/main1.jpg';
 import Main2 from 'assets/images/main/main2.jpg';
 import Main3 from 'assets/images/main/main3.jpg';
 import Main4 from 'assets/images/main/main4.jpg';
+import {Link} from 'react-router-dom';
 const CONSTANTSDATA = [
   {
     id: 1,
     title: '오늘 운동 기록',
     imageUrl: Main1,
     text: <p>오늘 운동한 내용을 기록해보아요!</p>,
+    route: '/record',
   },
   {
     id: 2,
     title: 'SNS',
     imageUrl: Main2,
     text: <p>다른 사람의 오운완을 구경해보아요!</p>,
+    route: '/sns',
   },
   {
     id: 3,
     title: '운동 기록 내역 보기',
     imageUrl: Main3,
     text: <p>지금까지 기록을 볼까요?</p>,
+    route: '/history',
   },
   {
     id: 4,
     title: '식단등록',
     imageUrl: Main4,
     text: <p>식단을 등록해 보아요!</p>,
+    route: '/food',
   },
 ];
 const Main = () => {
@@ -36,7 +41,9 @@ const Main = () => {
     <MainContainer>
       <MainWrapper>
         {CONSTANTSDATA.map(el => (
-          <MainCard key={el.id} title={el.title} imageUrl={el.imageUrl} text={el.text} />
+          <Link to={el.route} key={el.id}>
+            <MainCard title={el.title} imageUrl={el.imageUrl} text={el.text} />
+          </Link>
         ))}
       </MainWrapper>
     </MainContainer>
