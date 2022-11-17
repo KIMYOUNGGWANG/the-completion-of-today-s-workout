@@ -2,12 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import HambugerIcon from 'assets/images/hambuger.svg';
 import Logo from 'assets/images/LogoIcon.png';
+import {useNavigate} from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <NavWrapper>
-        <IconArea>
+        <IconArea onClick={() => navigate('/')}>
           <img src={Logo} alt="로고아이콘" />
         </IconArea>
         오운완챌린지

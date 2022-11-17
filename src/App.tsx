@@ -8,6 +8,7 @@ import SignUp from 'pages/Signup/SignUp';
 import Login from 'pages/Login/Login';
 import Main from 'pages/\bMain/Main';
 import Record from 'pages/record/Record';
+import History from 'pages/history/History';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Main />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/record" element={<Record />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </BackGroundContainer>
       <Footer />
