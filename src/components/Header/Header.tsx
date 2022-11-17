@@ -30,6 +30,10 @@ const Container = styled.header`
   align-items: center;
   position: fixed;
   z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #ffffff;
   @media screen and (max-width: 768px) {
     max-width: 415px;

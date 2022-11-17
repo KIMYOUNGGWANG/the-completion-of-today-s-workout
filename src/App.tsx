@@ -9,20 +9,22 @@ import Login from 'pages/Login/Login';
 import Main from 'pages/\bMain/Main';
 import Record from 'pages/record/Record';
 import History from 'pages/history/History';
+import Sns from 'pages/sns/Sns';
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <BackGroundContainer>
+    <BackGroundContainer>
+      <BrowserRouter>
+        <Header />
         <Routes>
           <Route index element={<Main />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/record" element={<Record />} />
           <Route path="/history" element={<History />} />
+          <Route path="/sns" element={<Sns />} />
         </Routes>
-      </BackGroundContainer>
-      <Footer />
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    </BackGroundContainer>
   );
 }
 
@@ -31,12 +33,13 @@ export default App;
 const BackGroundContainer = styled.div`
   width: 100%;
   height: 100vh;
+  margin-top: 60px;
   background-image: url(${BackgroundImg});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   opacity: 0.6;
   @media screen and(max-width:768px) {
-    max-width: 415px;
+    max-width: 550px;
   }
 `;
