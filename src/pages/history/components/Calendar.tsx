@@ -16,9 +16,8 @@ export default Calendar;
 
 const Container = styled.div`
   width: 100%;
-  height: calc(60vh + 60px);
+  height: calc(50vh + 60px);
   display: flex;
-  align-items: center;
   justify-content: center;
 `;
 const Wrapper = styled.div`
@@ -28,5 +27,10 @@ const Wrapper = styled.div`
   .react-calendar__navigation__prev2-button,
   .react-calendar__navigation__next2-button {
     visibility: hidden;
+  }
+  .react-calendar {
+    width: 100%;
+    max-width: 1200px;
+    padding: 35px;
   }
 `;

@@ -41,8 +41,10 @@ const Record = () => {
     <Container>
       <Wrapper>
         <Title>운동 기록</Title>
-        <SubTitle>사진등록</SubTitle>
-        <ImageContents files={files} selectImageHandler={selectImageHandler} />
+        <ImageContentsWrapper>
+          <SubTitle>사진등록</SubTitle>
+          <ImageContents files={files} selectImageHandler={selectImageHandler} />
+        </ImageContentsWrapper>
         <ContentsWrapper>
           <SubTitle>날짜 선택</SubTitle>
           <DateContents selectDateHandler={selectDateHandler} />
@@ -61,7 +63,7 @@ export default Record;
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + 60px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,8 +71,8 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
+  height: 100%;
   max-width: 1200px;
-  max-height: calc(100% - 150px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,9 +84,15 @@ const Wrapper = styled.div`
   }
 `;
 
+const ImageContentsWrapper = styled.div`
+  width: 100%;
+  height: 50%;
+`;
 const ContentsWrapper = styled.div`
   width: 100%;
+  height: 50%;
 `;
+
 const Title = styled.h3`
   width: 100%;
   font-size: 2rem;
