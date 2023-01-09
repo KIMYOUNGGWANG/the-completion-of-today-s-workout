@@ -3,7 +3,7 @@ import {FieldError, UseFormRegisterReturn} from 'react-hook-form';
 import styled from 'styled-components';
 interface Props {
   placeholder: string;
-  labelText: string;
+  labelText?: string;
   register: UseFormRegisterReturn;
   value?: string;
   maxLength?: number;

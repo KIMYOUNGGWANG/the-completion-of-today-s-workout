@@ -54,8 +54,11 @@ const NavWrapper = styled.nav`
 `;
 
 const IconArea = styled.div`
+  cursor: pointer;
   img {
     width: 30px;
   }
 `;
-const HambugerBtn = styled.div``;
+const HambugerBtn = styled.div`
+  cursor: pointer;
+`;

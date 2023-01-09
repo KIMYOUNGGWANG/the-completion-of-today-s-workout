@@ -33,13 +33,14 @@ export default App;
 const BackGroundContainer = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 60px;
   background-image: url(${BackgroundImg});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
   @media screen and(max-width:768px) {
-    max-width: 550px;
+    max-width: 480px;
+    min-width: 320px;
   }
 `;

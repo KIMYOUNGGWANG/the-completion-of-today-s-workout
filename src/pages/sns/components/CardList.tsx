@@ -16,5 +16,6 @@ export default CardList;
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 550px;
+  min-width: 320px;
+  max-width: 280px;
 `;

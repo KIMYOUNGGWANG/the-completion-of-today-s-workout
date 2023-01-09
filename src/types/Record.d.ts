@@ -1,7 +1,7 @@
 declare interface UpdateFiles {
   image: UpdateImage[];
   date: string;
-  workout: string[];
+  workout: string;
 }
 
 declare interface UpdateImage {

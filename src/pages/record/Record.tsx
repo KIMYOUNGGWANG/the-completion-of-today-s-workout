@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import DateContents from './components/DateContents';
 import Description from './components/Description';
 import ImageContents from './components/ImageContents';
+import WodList from './components/WodList';
 import WorkoutContentsSelector from './components/WorkoutContentsSelector';
 
 const Record = () => {
   const [files, setFiles] = useState<UpdateFiles>({
     image: [],
     date: '',
-    workout: [],
+    workout: '',
   });
   const inputRef = useRef<HTMLInputElement>(null);
   const selectImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,11 +32,9 @@ const Record = () => {
     setFiles({...files, date: e.target.value});
   };
 
-  const selectWorkoutHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const value = inputRef?.current?.value ?? '';
-    setFiles({...files, workout: [...files.workout, value]});
-    if (inputRef.current !== null) inputRef.current.value = '';
+  const selectWorkoutHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFiles({...files, workout: e.target.value});
+    // setFiles({...files, workout: [...files.workout, value]});
   };
   return (
     <Container>
@@ -50,6 +49,8 @@ const Record = () => {
           <DateContents selectDateHandler={selectDateHandler} />
           <SubTitle>운동선택</SubTitle>
           <WorkoutContentsSelector inputRef={inputRef} selectWorkoutHandler={selectWorkoutHandler} files={files} />
+          <SubTitle>WODs</SubTitle>
+          <WodList />
           <SubTitle>운동 설명</SubTitle>
           <Description />
         </ContentsWrapper>
@@ -63,7 +64,6 @@ export default Record;
 
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh + 60px);
   display: flex;
   align-items: center;
   justify-content: center;
